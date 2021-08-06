@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../lib/umake/gcc-5.4/x86_64/release/libDecoderLib.a  CMakeFiles/DecoderLib.dir/VLCReader.cpp.o CMakeFiles/DecoderLib.dir/AnnexBread.cpp.o CMakeFiles/DecoderLib.dir/BinDecoder.cpp.o CMakeFiles/DecoderLib.dir/CABACReader.cpp.o CMakeFiles/DecoderLib.dir/DecCu.cpp.o CMakeFiles/DecoderLib.dir/DecLib.cpp.o CMakeFiles/DecoderLib.dir/DecSlice.cpp.o CMakeFiles/DecoderLib.dir/NALread.cpp.o CMakeFiles/DecoderLib.dir/SEIread.cpp.o
+/usr/bin/ranlib ../../../../lib/umake/gcc-5.4/x86_64/release/libDecoderLib.a
