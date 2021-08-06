@@ -1,0 +1,39 @@
+name: GapBigMLT_aBCD_128x128_ORPQ_240k
+model_type: MltCtuORPQModel
+scale: ~
+num_gpu: 1  # set num_gpu: 0 for cpu mode
+manual_seed: 10
+
+datasets:
+  test:
+    name: BVI-DVC
+    type: MltCtuORPQDataset
+    dataroot_org: /home/ubuntu/whyeo/Dataset/SMD/img/val/128x128/org/
+    dataroot_pred: /home/ubuntu/whyeo/Dataset/SMD/img/val/128x128/pred/
+    data_csv: /home/ubuntu/whyeo/Dataset/SMD/val128_aBCD.csv
+
+    cache_data: false
+
+# network structures
+network:
+  type: GapBigMltCtuORPQ
+
+# path
+path:
+  pretrain_network: /home/ubuntu/whyeo/Thesis/mlt-cnn/experiments/Gap_Big_MLT_aBCD_128x128_ORPQ_b128_Adam_lr4e-4_600k/models/net_240000.pth
+  strict_load: false
+
+# validation settings
+val:
+  save_img: false
+  suffix: ~  # add suffix to saved images, if None, use exp name
+
+  metrics:
+    l1: # metric name, can be arbitrary
+      type: mlt_l1_acc
+    l2:
+      type: mlt_l2_acc
+    l3:
+      type: mlt_l3_acc
+    acc:
+      type: mlt_l3_acc

@@ -1,0 +1,94 @@
+# general settings
+name: ResNet_GapBig_ABCD_128x128_Org_lr4e-4_600k_b128
+model_type: CLSModel
+scale: ~
+num_gpu: 1  # set num_gpu: 0 for cpu mode
+manual_seed: 10
+
+# dataset and data loader settings
+datasets:
+  train:
+    name: BVI-DVC
+    type: SMDOrgDataset
+    dataroot_org: /home/ubuntu/whyeo/Dataset/SMD/img/train/128x128/org/
+    dataroot_pred: /home/ubuntu/whyeo/Dataset/SMD/img/train/128x128/pred/
+    dataroot_reco: /home/ubuntu/whyeo/Dataset/SMD/img/train/128x128/reco/
+    data_csv: /home/ubuntu/whyeo/Dataset/SMD/train128_ABCD.csv
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 4
+    batch_size_per_gpu: 128
+    dataset_enlarge_ratio: 1
+    prefetch_mode: ~
+
+  val:
+    name: BVI-DVC
+    type: SMDOrgDataset
+    dataroot_org: /home/ubuntu/whyeo/Dataset/SMD/img/val/128x128/org/
+    dataroot_pred: /home/ubuntu/whyeo/Dataset/SMD/img/val/128x128/pred/
+    dataroot_reco: /home/ubuntu/whyeo/Dataset/SMD/img/val/128x128/reco/
+    data_csv: /home/ubuntu/whyeo/Dataset/SMD/val128_aBCD.csv
+
+    cache_data: false
+    num_frame: ~
+    padding: ~
+
+# network structures
+network:
+  type: GapBigResNetO
+
+# path (only for resuming)
+#/home/ubuntu/whyeo/Thesis/fast-cu-split-decision-cnn/experiments/ResNet_SMD_128x128_Concat3_lr4e-4_600k_b128/models/net_315000.pth
+#/home/ubuntu/whyeo/Thesis/fast-cu-split-decision-cnn/experiments/ResNet_SMD_128x128_Concat3_lr4e-4_600k_b128/training_states/315000.state
+path:
+  pretrain_network: ~
+  strict_load: false
+  resume_state: ~
+
+# training settings
+train:
+  optim:
+    type: Adam
+    lr: !!float 4e-4
+    weight_decay: 0
+    betas: [0.9, 0.99]
+
+  scheduler:
+    type: CosineAnnealingRestartLR
+    periods: [50000, 100000, 150000, 150000, 150000]
+    restart_weights: [1, 0.5, 0.5, 0.5, 0.5]
+    eta_min: !!float 1e-7
+
+  total_iter: 600000
+  warmup_iter: -1  # no warm up
+
+  # losses
+  criterion:
+    type: CELoss
+
+# validation settings
+val:
+  val_freq: !!float 5e3
+  save_img: false
+
+  metrics:
+    acc: # metric name, can be arbitrary
+      type: calculate_accuracy
+
+# logging settings
+logger:
+  print_freq: 500
+  save_checkpoint_freq: !!float 5e3
+  use_tb_logger: true
+  wandb:
+    project: ~
+    resume_id: ~
+
+# dist training settings
+dist_params:
+  backend: ~
+  port: ~
+
+find_unused_parameters: true
+
