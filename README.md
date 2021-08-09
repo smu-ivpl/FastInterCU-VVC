@@ -1,5 +1,4 @@
-# FastInterCU-VVC
-"Deep Neural Network-based Fast Inter CU Splitting Algorithm for Versatile Video Coding (VVC) Standard"
+# Deep Neural Network-based Fast Inter CU Splitting Algorithm for Versatile Video Coding (VVC) Standard
 
 ## Projects
 - [mlt-cnn-python/](https://github.com/smu-ivpl/FastInterCU-VVC/tree/main/mlt-cnn-python) : Python project for training MLT-CNN (Multi-Level Tree CNN)
