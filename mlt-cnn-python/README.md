@@ -30,14 +30,27 @@ This project is for traning our proposed CNN architecture called Multi-Level Tre
 
 ## Anaconda environment setting
 ```
-conda env create --file environment.yaml
+conda env create --file thesis_env.yaml
 ```
 or install the packages specified in `thesis_env.yaml`
 
 ## Dataset
+You can download it from [here](구글드라이브주소).
 
 ## Training
+```
+cd codes
+python train_mltcnn.py -opt options/train/MLTCNN_128x128/Gap_BigMLT_A_BCD_128x128_ORPQ_b128_Adam_600k.yml (MLT-CNN)
+python train_mltcnn.py -opt options/train/ResNet_128x128/train_GapBigResNet_ABCD_128x128_Org_b128_600k.yml (ResNet)
+```
 
 ## Testing
+```
+cd codes
+python train_mltcnn.py -opt options/test/SMD/MLTCNN_128x128/GapBigMLT_aBCD_128x128_ORPQ.yml
+```
 
 ## Tensorboard
+```
+tensorboard --logdir=experiments
+```
