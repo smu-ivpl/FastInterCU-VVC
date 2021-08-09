@@ -47,7 +47,7 @@ python train_mltcnn.py -opt options/train/ResNet_128x128/train_GapBigResNet_ABCD
 ## Testing
 ```
 cd codes
-python train_mltcnn.py -opt options/test/SMD/MLTCNN_128x128/GapBigMLT_aBCD_128x128_ORPQ.yml
+python test.py -opt options/test/SMD/MLTCNN_128x128/GapBigMLT_aBCD_128x128_ORPQ.yml
 ```
 
 ## Tensorboard
