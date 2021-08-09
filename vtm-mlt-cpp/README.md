@@ -84,3 +84,10 @@ This project is based on [VTM reference software for VVC](https://vcgit.hhi.frau
 ## Build instructions
 Please check [here](https://vcgit.hhi.fraunhofer.de/jvet/VVCSoftware_VTM#build-instructions).
 
+## Encoding
+```
+mkdir result && mkdir result/RA_1sec_128 && mkdir result/RA_1sec_128/bin result/RA_1sec_128/log result/RA_1sec_128/yuv
+cd script_128
+chmod +x *.sh
+./Tango2_enc_60.sh
+```
