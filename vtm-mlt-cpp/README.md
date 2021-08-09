@@ -9,7 +9,7 @@ This project is based on [VTM reference software for VVC](https://vcgit.hhi.frau
 - OpenCV 4.0.0
 - LibTorch 1.7.1
 
-## Before build this project...
+## Before building this project...
 1. Download [LibTorch](https://pytorch.org/get-started/locally/) (*Check your CUDA version*)
 	
 	- Example for dowloading LibTorch with CUDA 10.1
