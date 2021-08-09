@@ -35,7 +35,7 @@ conda env create --file thesis_env.yaml
 or install the packages specified in `thesis_env.yaml`
 
 ## Dataset
-You can download it from [here](구글드라이브주소).
+You can download it from [here](https://drive.google.com/drive/folders/1RsINyxcY0G9_hHUsyIw9Qol4S-fuYgHd?usp=sharing).
 
 ## Training
 ```
