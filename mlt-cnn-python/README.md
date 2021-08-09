@@ -10,7 +10,7 @@ This project is for traning our proposed CNN architecture called Multi-Level Tre
 - options : configuration files to set model, dataset, and hyper parameters
 - utils : utility files
 
-#### main files
+#### main files in `codes/`
 - train_mltcnn.py : for training MLT-CNN
 - train.py : for traninng ResNet
 - test_inference.py : for testing
