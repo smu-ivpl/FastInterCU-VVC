@@ -1,6 +1,6 @@
 # Deep Neural Network-based Fast Inter CU Splitting Algorithm for Versatile Video Coding (VVC) Standard
 ## Paper
-http://www.jmis.org/archive/view_article?pid=jmis-8-3-147
+Woon-Ha Yeo, Byung-Gyu Kim*, "CNN-based Fast Split Mode Decision Algorithm for Versatile Video Coding (VVC) Inter Prediction," J Multimed Inf Syst 8(3):147-158 (http://www.jmis.org/archive/view_article?pid=jmis-8-3-147)
 ## Projects
 - [mlt-cnn-python/](https://github.com/smu-ivpl/FastInterCU-VVC/tree/main/mlt-cnn-python) : Python project for training MLT-CNN (Multi-Level Tree CNN)
 - [vtm-mlt-cpp/](https://github.com/smu-ivpl/FastInterCU-VVC/tree/main/vtm-mlt-cpp) : VVC Test Model (VTM) v11.0 with Proposed fast algorithm using trained MLT-CNN model
