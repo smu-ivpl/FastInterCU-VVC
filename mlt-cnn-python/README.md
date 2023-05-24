@@ -35,7 +35,8 @@ conda env create --file thesis_env.yaml
 or install the packages specified in `thesis_env.yaml`
 
 ## Dataset
-You can download it from [here](https://drive.google.com/drive/folders/1RsINyxcY0G9_hHUsyIw9Qol4S-fuYgHd?usp=sharing).
+You can download it from [here](https://drive.google.com/drive/folders/1By7Yq77erALjoKz6UW5oP97QCmKIFOj8?usp=share_link).
+All images are aquired during encoding [BVI-DVC](https://fan-aaron-zhang.github.io/BVI-DVC/) dataset with VTM-11.0. 
 
 ## Training
 ```
