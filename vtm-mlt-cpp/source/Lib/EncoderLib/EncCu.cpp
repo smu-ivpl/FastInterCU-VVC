@@ -903,22 +903,19 @@ void EncCu::xCompressCU( CodingStructure*& tempCS, CodingStructure*& bestCS, Par
                 {
                     std::cerr << "error loading the model\n";
                 }
-                bool small = false;
+                
                 try
-                {
+                {   
                     auto outputs = cnn.forward(inputTensor).toTuple();
                     //torch::Tensor out1 = outputs->elements()[0].toTensor();
                     //torch::Tensor out2 = outputs->elements()[1].toTensor();
                     torch::Tensor out;
-
                     if (cuw == 128) {
                         out = outputs->elements()[2].toTensor();
-                        small = false;
                     }
                     else /// smaller sizes
                     {
                         out = outputs->elements()[0].toTensor();
-                        small = true;
                     }
                     auto pred = out.cpu().detach();
                     predictedSplitMode = pred.argmax(1).item().toInt();
